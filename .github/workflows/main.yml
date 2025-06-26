@@ -42,7 +42,7 @@ jobs:
       - name: Build, tag, and push Application image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          APP_ECR_REPOSITORY: clo835-webapp # Name of your ECR repository for the application
+          APP_ECR_REPOSITORY: clo835-myapp # Name of your ECR repository for the application
           IMAGE_TAG: myapp # Use the commit SHA as the image tag
         run: |
           echo "Building Application image..."
