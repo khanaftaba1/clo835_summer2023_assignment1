@@ -31,7 +31,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           MYSQL_ECR_REPOSITORY: clo835-mysql # Name of your ECR repository for MySQL
-          IMAGE_TAG: mysql_v0.2 # Use the commit SHA as the image tag
+          IMAGE_TAG: mysql # Use the commit SHA as the image tag
         run: |
           echo "Building MySQL image..."
           docker build -t $ECR_REGISTRY/$MYSQL_ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile_mysql .
@@ -43,7 +43,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           APP_ECR_REPOSITORY: clo835-webapp # Name of your ECR repository for the application
-          IMAGE_TAG: myapp_v0.1 # Use the commit SHA as the image tag
+          IMAGE_TAG: myapp # Use the commit SHA as the image tag
         run: |
           echo "Building Application image..."
           docker build -t $ECR_REGISTRY/$APP_ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
