@@ -43,7 +43,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           APP_ECR_REPOSITORY: clo835-myapp # Name of your ECR repository for the application
-          IMAGE_TAG: myapp # Use the commit SHA as the image tag
+          IMAGE_TAG: myapp_v2 # Use the commit SHA as the image tag
         run: |
           echo "Building Application image..."
           docker build -t $ECR_REGISTRY/$APP_ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
