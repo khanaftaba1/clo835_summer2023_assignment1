@@ -7,7 +7,8 @@
 	<font color="black" size="4" style="font-family: avenir">
 
 		<h1 style="color: DodgerBlue">Employee Database</h1>
-		<body style="background: {{ color }};" >
+		<h3 style="color: DodgerBlue">By: {{ student_name }}</h3>
+		<body style="background: {{ color }}; {% if background_image %}background-image: url('/background-image'); background-size: cover; background-position: center;{% endif %}" >
 
 			<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
 

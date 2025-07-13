@@ -1,15 +1,12 @@
 <!doctype html>
 <title>Hello from Flask</title>
-<body style="background: {{ color }};"></body>
+<body style="background: {{ color }}; {% if background_image %}background-image: url('/background-image'); background-size: cover; background-position: center;{% endif %}"></body>
 <div style="color: #e4e4e4;
     text-align:  center;
     height: 90px;
     vertical-align:  middle;">
-{% if name %}
-  <h1>Hello from {{ name }}!</h1>
-{% else %}
-  <h1>Hello From CLO835!</h1>
-{% endif %}
+<h1>Hello from {{ student_name }}!</h1>
+<h2>CLO835 Final Project</h2>
 
   {% if contents %}
   <textarea rows="10" cols="50">
